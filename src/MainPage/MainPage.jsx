@@ -23,7 +23,10 @@ export default function BasicModal() {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
+      <Button variant="contained" onClick={handleOpen}>Click Me</Button>
+      <Button variant="outlined" color="error">
+        I am useless
+      </Button>
       <Modal
         open={open}
         onClose={handleClose}

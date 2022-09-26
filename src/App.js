@@ -1,26 +1,22 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar/Navbar';
-import TestNavbar from './TestNavbar/TestNavbar';
+import TestNavbar from './MainPage/MainPage';
+import About from './About/About';
+import Slider from './Slider/Slider';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from '@mui/material/Button';
+
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Navbar />
-        {/* <Route path='/test/' component={TestNavbar} />
-        <Route exact path="/">
-          <TestNavbar />
-          <Button variant="contained">Hello I am Material Button</Button>
-        </Route> */}
-
-        {/* <TestNavbar /> */}
-            {/* <Route path='gallery' /> */}
-      </div>
-    </BrowserRouter>
+    <div className="App">
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<TestNavbar/>} />
+        <Route path='about' element={<About/>} />
+        <Route path='gallery' element={<Slider />} />
+      </Routes>
+    </div>
   );
 }
 
